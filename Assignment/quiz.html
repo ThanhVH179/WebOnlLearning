@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+    <script src="https://kit.fontawesome.com/44a137dbcd.js" crossorigin="anonymous"></script>
+    <title>Quiz</title>
+  </head>
+  <body ng-app="myapp">
+    <div class="col-6 m-auto" ng-controller="myquiz">
+        <div class="card">
+            <div class="card-header">
+              <h4 class="font-weight-bold">Lập trình Android nâng cao</h4>
+              <p id="demo"></p>
+            </div>
+            <div class="card-body" ng-repeat="q in listquiz | limitTo:1:count">
+              <h5 class="font-weight-bold text-primary">{{q.Text}}</h5>
+              <hr>
+              <p ng-repeat="x in q.Answers">
+                <input type="radio" name="answer" >  {{x.Text}}  
+              </p>
+            </div>
+            <div class="card-footer">
+                Điểm:
+            </div>
+        </div>
+        <div class="text-center pt-2">
+            <button ng-click="first()" class="btn btn-outline-danger"><i class="fas fa-fast-backward"></i></button>
+            <button ng-click="back()" class="btn btn-outline-danger"><i class="fas fa-hand-point-left"></i></button>
+            <button ng-click="next()" class="btn btn-outline-danger"><i class="fas fa-hand-point-right"></i></button>
+            <button ng-click="last()" class="btn btn-outline-danger"><i class="fas fa-fast-forward"></i></button>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+<script src="js/Quizs/ADAV.js"></script>
+<script>
+    var app = angular.module("myapp",["ngRoute"]);
+    app.controller("myquiz", function($scope, $http){
+        $scope.count = 0;
+        $scope.listquiz = list;
+        $scope.end = $scope.listquiz.lenght;
+        $scope.first = function(){
+            $scope.count = 0;
+            alert($scope.end);
+        }
+        $scope.last= function(){
+            $scope.count = $scope.end;
+        }
+        $scope.next = function(){
+            $scope.count ++;
+            if($scope.count == $scope.end)
+                $scope.count = 0;
+        }
+        $scope.back = function(){
+            $scope.count --;
+            if($scope.count == 0)
+                $scope.count = $scope.end;
+        }
+    })
+    // Set the date we're counting down to
+    var countDownDate = new Date().getTime() + 15 * 60 * 1000;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for hours, minutes and seconds
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML =  hours + ":"
+  + minutes + ":" + seconds;
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("count").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>

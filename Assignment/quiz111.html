@@ -1,0 +1,44 @@
+<div class="col-10 m-auto">
+    <div class="card">
+        <div class="card-header text-center">
+          <h4 class="font-weight-bold">{{tenMH}}</h4>
+          <h5 class="font-weight-bold">Thời gian: <i id="count" class="text-danger" style="font-style: normal;"></i></h5>
+        </div>
+        <div class="card-body" ng-repeat="q in listquiz | limitTo:1:count">
+          <h5 class="font-weight-bold text-primary">{{q.Text}}</h5>
+          <hr>
+          <p ng-repeat="x in q.Answers">
+            <input type="radio" name="answer" value="{{x.Id}}" ng-click="check(count)" ng-model="dapan">  {{x.Text}}  
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-lg btn-danger" data-toggle="modal" data-target="#resultExam">Nộp bài</button>
+        </div>
+        <div class="modal fade" id="resultExam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Kết quả</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h3>Chức mừng: </h3>
+                <p>Điểm của bạn là: {{diem}}/{{listquiz.length}}</p>
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Làm lại</button> -->
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="text-center pt-2">
+        <button ng-click="first()" class="btn btn-outline-danger"><i class="fas fa-fast-backward"></i></button>
+        <button ng-click="back()" ng-disabled="count == 0" class="btn btn-outline-danger"><i class="fas fa-hand-point-left"></i></button>
+        <button ng-click="next()" ng-disabled="count == listquiz.length - 1" class="btn btn-outline-danger"><i class="fas fa-hand-point-right"></i></button>
+        <button ng-click="last()" class="btn btn-outline-danger"><i class="fas fa-fast-forward"></i></button>
+    </div>
+</div>

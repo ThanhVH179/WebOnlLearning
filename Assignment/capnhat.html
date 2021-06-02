@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="col-10 m-auto">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4 class="font-weight-bold">Cập nhật tài khoản</h4>
+            </div>
+            <div class="card-body">
+                <form name="frmCP">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label class="font-weight-bold" for="inputEmail">Email</label>
+                          <input type="email" class="form-control" id="inputEmail" ng-model="email" readonly>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label class="font-weight-bold" for="inputUser">Tài khoản</label>
+                          <input type="text" name="taikhoan" class="form-control" id="inputUser" ng-model="username" required ng-minlength="3" ng-maxlength="20">
+                          <span class="text-danger" ng-show="frmCP.taikhoan.$invalid">Tài khoản từ 3 đến 20 kí tự</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label class="font-weight-bold" for="inputName">Họ tên</label>
+                          <input type="text" name="hoten" class="form-control" id="inputName" ng-model="fullname" required ng-minlength="3" ng-maxlength="20">
+                          <span class="text-danger" ng-show="frmCP.hoten.$invalid">Tài khoản từ 3 đến 20 kí tự</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label class="font-weight-bold" for="inputUser">Ngày sinh</label>
+                          <input type="text" class="form-control" id="inputUser" ng-model="date">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 mt-5">
+                            <label class="font-weight-bold">Giới tính : </label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" id="Male" type="radio" name="gender" value="true" ng-model="gender">
+                                <label class="form-check-label" for="Male">Nam</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" id="Female" type="radio" name="gender" value="false" ng-model="gender">
+                                <label class="form-check-label" for="Female">Nữ</label>
+                              </div>            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold" for="inputFee">Học phí</label>
+                            <input type="number" class="form-control" id="inputFee" ng-model="fee">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold" for="inputMark">Điểm</label>
+                            <input type="number" name="diem" class="form-control" id="inputMark" ng-model="mark" min="0" max="10" required>
+                            <span class="text-danger" ng-show="frmCP.diem.$invalid">Điểm từ 0 đến 10</span>
+                        </div>
+                    </div>
+                </form>
+                <button ng-click="update()" type="button" class="btn btn-danger btn-lg btn-block">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

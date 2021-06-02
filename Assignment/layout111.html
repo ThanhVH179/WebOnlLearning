@@ -1,0 +1,24 @@
+
+    <div class="row text-center m-auto ">
+        <div class="w-50" ng-repeat="mon in listMon| limitTo:4:start">
+          <a href="#!quiz/{{mon.Id}}/{{mon.Name}}">
+            <div class="card m-3 cardsubject" >
+              <div class="card-body">
+                <img src="images/logos/{{mon.Logo}}" alt="">
+              </div>
+              <div class="card-footer">
+                {{mon.Name}}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="row m-auto">
+          <button class="btn btn-outline-success m-auto" ng-click="dau()"><<</button>
+          <button class="btn btn-outline-success m-auto" ng-click="tiep()">></button>
+          <button class="btn btn-outline-success m-auto" ng-click="lui()"><</button>
+          <button class="btn btn-outline-success m-auto" ng-click="cuoi()">>></button>
+        </div>
+    </div>
+
+  
+  

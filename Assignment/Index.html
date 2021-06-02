@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="css/layout.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/44a137dbcd.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-route.js"></script>
+    <title>Trang chủ</title>
+  </head>
+  <body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <header class="row">
+          <img class="w-100"  src="images/banner.png" alt="header">
+        </header>
+        <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link font-weight-bold" href="Index.html"><i class="fas fa-home"></i> FPT Polytechnic<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!gioithieu" ><i class="fas fa-info-circle"></i> Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!diachi"><i class="fas fa-phone-square-alt"></i> Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!gopy"><i class="fas fa-comments"></i> Góp ý</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!hoidap"><i class="far fa-question-circle"></i> Hỏi đáp</a>
+                </li>
+              </ul>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user-circle"></i>
+                      Tài khoản
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#!dangnhap">Đăng nhập</a>
+                      <a class="dropdown-item" href="#!dangky">Đăng ký</a>
+                      <a class="dropdown-item" href="#!quenmk">Quên mật khẩu</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Đăng xuất</a>
+                      <a class="dropdown-item" href="#!doimk">Đổi mật khẩu</a>
+                      <a class="dropdown-item" href="#!capnhat">Cập nhật tài khoản</a>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="row">
+            <article class="col-lg-9 col-sm-9 align-content-center">
+              <ng-view></ng-view>
+            </article>
+            <aside class="col-lg-3 col-sm-3">
+                <div class="card mt-1 m1-n2 mr-n2">
+                  <div class="card-header font-weight-bold"><i class="fas fa-clipboard"></i> DANH MỤC MÔN HỌC</div>
+                  <div class="card-body p-0">
+                    <div class="menudung" ng-include="'menudung.html'"></div>
+                  </div>
+                </div>
+            </aside>
+          </div>
+            
+        <footer class="row mt-5" id="contact">
+          <div class="col-4">
+            <i class="font-weight-bold" style="font-style: normal; color: orangered;">Adress:</i> <p> Công viên phần mềm, Toà nhà Innovation lô 24, Quang Trung, Quận 12, Thành phố Hồ Chí Minh</p>
+            <i class="font-weight-bold" style="font-style: normal; color: orangered;">Email:</i> <p> thanhvhps13730@gmail.com</p>
+            <i class="font-weight-bold" style="font-style: normal; color: orangered;">Phone:</i> <p> 888-333-xxx</p>
+          </div>
+          <div class="col-3">
+            <p class="font-weight-bold" style="font-size: 25px;">Khóa học tiêu biểu</p>
+            <hr>
+            <p>Lập trình Android nâng cao</p>
+            <p>Lập trình PHP.NET</p>
+            <p>Quản lý dự án với Agile</p>
+            <p>Lập trình hướng đối tượng với Java</p>
+          </div>
+          <div class="col-5">
+            <iframe class="w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.455226329226!2d106.62735611474974!3d10.852939092269638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529b6a2b351a5%3A0x11690ada8c36f9bc!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIFRo4buxYyBow6BuaCBGUFQgUG9seXRlY2huaWMgVFAuSENNIChDUzMp!5e0!3m2!1svi!2s!4v1617360568046!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <br>
+          <p class="row mt-5 ml-auto mr-auto text-center text-secondary">FPT Polytechnic &copy; 2017. All rights reserved</p>
+        </footer>
+    </div>
+
+  </body>
+</html>
+<script src="js/myweb.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

@@ -1,0 +1,37 @@
+header{
+    height: 200px;
+}
+nav.row {
+    height: 60px;
+}
+footer {
+    min-height: 50px; 
+}
+.row > article{
+    min-height: 300px; 
+}
+.row> aside{
+    min-height: 300px;
+}
+
+.card .list-group-item:hover{
+    background-color: rgb(94, 89, 89);
+    color: white !important;
+}
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+article .cardsubject:hover{
+    border: 2px solid black;
+    font-weight: bold;
+    text-transform: none;
+}
+nav .nav-item:hover{
+    font-weight: bold;
+    background-color: cadetblue;
+}
+.dropdown-item:hover{
+    background-color: rgb(94, 89, 89);
+    color: white;
+}
